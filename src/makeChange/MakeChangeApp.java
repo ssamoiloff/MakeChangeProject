@@ -25,12 +25,38 @@ public class MakeChangeApp {
 	}
 	
 	public static void printChange(double change) {
+//		int twenties = twentyBill(change);
+//		int tens = tenBill(change);
+//		int fives = fiveBill(change);
+//		int ones = oneBill(change);
+//		int quarters = quarters(change);
+//		int dimes = dimes(change);
+//		int nickels = nickels(change);
+//		int pennies = pennies(change);
+		
+		int changeDue = (int)(change * 100);
+		
+		int twenties = changeDue / 2000;
+		changeDue = changeDue % 2000;
+		int tens = changeDue / 1000;
+		changeDue = changeDue % 1000;
+		int fives = changeDue / 500;
+		changeDue = changeDue % 500;
+		int ones = changeDue / 100;
+		changeDue = changeDue % 100;
+		int quarters = changeDue / 25;
+		changeDue = changeDue % 25;
+		int dimes = changeDue / 10;
+		changeDue = changeDue % 10;
+		int nickels = changeDue / 5;
+		changeDue = changeDue % 5;
+		int pennies = changeDue;
+		
 //		if (change >= 20.0) {
-//			int twenties = twentyBill(change);
 //		} else if (change < 20.0 && change >=10.0) {
 //			int tens = tenBill(change);
 //		} else if 
-		System.out.println("Your change is: " + twentyBill(change));
+		System.out.println("Your change is: ");
 	}
 	
 //	Bill change methods
@@ -52,22 +78,22 @@ public class MakeChangeApp {
 	}
 	
 //	Coin change methods
-	public static int quarters(double change) {
-		
-		return quarters;
-	}
-	public static int dimes(double change) {
-		
-		return dimes;
-	}
-	public static int nickels(double change) {
-		
-		return nickels;
-	}
-	public static int pennies(double change) {
-		
-		return pennies;
-	}
+//	public static int quarters(double change) {
+//		int quarters = 
+//		return quarters;
+//	}
+//	public static int dimes(double change) {
+//		
+//		return dimes;
+//	}
+//	public static int nickels(double change) {
+//		
+//		return nickels;
+//	}
+//	public static int pennies(double change) {
+//		
+//		return pennies;
+//	}
 
 }
 
