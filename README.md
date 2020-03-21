@@ -4,8 +4,8 @@
 
 ### Technologies Used
 - Java
-Eclipse
-MacOS Terminal
-GitHub/Git
+- Eclipse
+- MacOS Terminal
+- GitHub/Git
 
 ### Lessons Learned
