@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class MakeChangeApp {
 
 	public static void main(String[] args) {
-
+//	User prompts
 		Scanner kb = new Scanner(System.in);
-		System.out.print("Enter item price: ");
+		System.out.print("Enter amount due: ");
 		double price = kb.nextDouble();
 		System.out.print("Enter amount tendered: ");
 		double tendered = kb.nextDouble();
 		kb.close();
 
 		double change = tendered - price;
-
+//	if/else logic to determine valid input
 		if (price == tendered) {
 			System.out.println("You provided exact change! Nice!");
 		} else if (price > tendered) {
@@ -24,6 +24,7 @@ public class MakeChangeApp {
 		}
 	}
 
+//	Method that calls/stores notes/coins values, then prints change owed
 	public static void printChange(double change) {
 		int twenties = twentyBill(change);
 		int tens = tenBill(change);
@@ -34,7 +35,7 @@ public class MakeChangeApp {
 		int nickels = nickels(change);
 		int pennies = pennies(change);
 
-		System.out.println("Change due is:\n");
+		System.out.println("\nChange due is:\n");
 		
 		if (twenties != 0) {
 			if (twenties < 2) {
@@ -95,7 +96,7 @@ public class MakeChangeApp {
 
 	}
 
-//	Bill change methods
+//	Bill change methods (calculate and convert change into notes)
 	public static int twentyBill(double change) {
 		int twenties = (int)(change/20);
 
@@ -138,9 +139,10 @@ public class MakeChangeApp {
 		return ones;
 	}
 
-//	Coin change methods
+//	Coin change methods (calculate and convert change into coins)
+//	Switched to using Math.round() for better rounding
 	public static int quarters(double change) {
-		int changeDue = (int) (change * 100);
+		int changeDue = (int)Math.round(change*100);
 
 		int twenties = changeDue / 2000;
 		changeDue = changeDue % 2000;
@@ -156,7 +158,7 @@ public class MakeChangeApp {
 	}
 
 	public static int dimes(double change) {
-		int changeDue = (int) (change * 100);
+		int changeDue = (int)Math.round(change*100);
 
 		int twenties = changeDue / 2000;
 		changeDue = changeDue % 2000;
@@ -174,7 +176,7 @@ public class MakeChangeApp {
 	}
 
 	public static int nickels(double change) {
-		int changeDue = (int) (change * 100);
+		int changeDue = (int)Math.round(change*100);
 
 		int twenties = changeDue / 2000;
 		changeDue = changeDue % 2000;
@@ -194,7 +196,7 @@ public class MakeChangeApp {
 	}
 
 	public static int pennies(double change) {
-		int changeDue = (int) (change * 100);
+		int changeDue = (int)Math.round(change*100);
 
 		int twenties = changeDue / 2000;
 		changeDue = changeDue % 2000;
